@@ -11,12 +11,14 @@ public class DoorButton : MonoBehaviour
     {
         _position = transform.localPosition;
     }
+    
     private void OnMouseDown()
     {
         transform.localPosition = _position - transform.forward * _animationButton;
         _door.ButtonPressed();
         Invoke(nameof(MouseUp), 0.1f);
     }
+    
     private void MouseUp()
     {
         transform.localPosition = _position;
