@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
         else if (Input.mousePosition.x > Screen.width - _rotateZone && transform.rotation.eulerAngles.y < 120)
             MovementCamera(_sensitivy);
     }
+    
     private void MovementCamera(float _sensitivy)
     {
         transform.Rotate(0, _sensitivy * Time.deltaTime, 0);
