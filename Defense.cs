@@ -14,17 +14,17 @@ public class Defense : MonoBehaviour
 
     private void Update()
     {
-        if (_bonnieDoor.activeSelf == true && _chicaDoor.activeSelf == true)
+        if (_bonnieDoor.activeSelf == true || _chicaDoor.activeSelf == true)
             Invoke(nameof(ScreamerAnimotronic), _attackDelay);
     }
 
     private void ScreamerAnimotronic()
     {
-        Attack—heck(_bonnieDoor, _bonnieScreamer, _leftDoorOpen);
-        Attack—heck(_chicaDoor, _chicaScreamer, _RightDoorOpen);
+        Attack≈Éheck(_bonnieDoor, _bonnieScreamer, _leftDoorOpen);
+        Attack≈Éheck(_chicaDoor, _chicaScreamer, _RightDoorOpen);
     }
 
-    private void Attack—heck(GameObject animotronicDoor, GameObject animotronicScream, GameObject doorOpen)
+    private void Attack≈Éheck(GameObject animotronicDoor, GameObject animotronicScream, GameObject doorOpen)
     {
         if (doorOpen.activeSelf == true && animotronicDoor.activeSelf == true)
             animotronicScream.SetActive(true);
