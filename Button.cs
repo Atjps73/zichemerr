@@ -11,11 +11,13 @@ public class Button : MonoBehaviour
     {
         _position = transform.localPosition;
     }
+    
     private void OnMouseDown()
     {
         transform.localPosition = _position - transform.forward * _animationButton;
         _doorLight.SetActive(true);
     }
+    
     private void OnMouseUp()
     {
         transform.localPosition = _position;
