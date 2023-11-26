@@ -5,7 +5,7 @@ public class DoorButton : MonoBehaviour
     [SerializeField] private Vector3 _position;
     [SerializeField] private YourMom _door;
 
-    private float _animationButton = 0.03f;
+    private readonly float _animationButton = 0.03f;
 
     private void Awake()
     {
