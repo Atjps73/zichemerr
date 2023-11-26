@@ -16,23 +16,16 @@ public class YourMom: MonoBehaviour
         _isOpen = !_isOpen;
         _action = true;
     }
+    
     private void Update()
     {
         if (_isOpen)
         {
             _NextPosition = _openPosition;
-            {
-                obj[1].SetActive(true);
-                obj[0].SetActive(false);
-            }
         }
         else
         {
             _NextPosition = _closePosition;
-            {
-                obj[0].SetActive(true);
-                obj[1].SetActive(false);
-            }
         }
         if (_action)
         {
