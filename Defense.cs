@@ -20,8 +20,8 @@ public class Defense : MonoBehaviour
 
     private void ScreamerAnimotronic()
     {
-        AttackCheck(_bonnieDoor, _bonnieScreamer, _leftDoorOpen);
-        AttackCheck(_chicaDoor, _chicaScreamer, _RightDoorOpen);
+        Attack(_bonnieDoor, _bonnieScreamer, _leftDoorOpen);
+        Attack(_chicaDoor, _chicaScreamer, _RightDoorOpen);
     }
 
     private void Attack(GameObject animotronicDoor, GameObject animotronicScream, GameObject doorOpen)
