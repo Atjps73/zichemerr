@@ -12,7 +12,6 @@ public class OpenCamera : MonoBehaviour
     {
         if (_minimap.activeSelf)
             OpenClose(false, true, false);
-
         else
             OpenClose(true, false, true);
     }
