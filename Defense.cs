@@ -24,7 +24,7 @@ public class Defense : MonoBehaviour
         AttackCheck(_chicaDoor, _chicaScreamer, _RightDoorOpen);
     }
 
-    private void AttackCheck(GameObject animotronicDoor, GameObject animotronicScream, GameObject doorOpen)
+    private void Attack(GameObject animotronicDoor, GameObject animotronicScream, GameObject doorOpen)
     {
         if (doorOpen.activeSelf == true && animotronicDoor.activeSelf == true)
             animotronicScream.SetActive(true);
