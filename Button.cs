@@ -4,8 +4,9 @@ public class Button : MonoBehaviour
 {
     [SerializeField] private GameObject _doorLight;
 
-    private Vector3 _position;
     private readonly float _animationButton = -0.03f;
+    
+    private Vector3 _position;
 
     private void Awake()
     {
