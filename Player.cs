@@ -1,22 +1,42 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float _sensitivy = 150f;
+    [SerializeField] private GameObject _playerHead;
+    [SerializeField] private Rigidbody _rigidbody;
+    [SerializeField] private Transform _transform;
 
-    private readonly float _rotateZone = Screen.width / 5;
+    private readonly float _jumpForce = 18.5f;
+    private readonly float _delay = 1.5f;
 
-    private void Update()
+    private bool _isGrounded = true;
+
+    private void OnCollisionEnter(Collision other)
     {
-        if (Input.mousePosition.x < _rotateZone && transform.rotation.eulerAngles.y > 60)
-            MovementCamera(-_sensitivy);
+        _isGrounded = true;
 
-        else if (Input.mousePosition.x > Screen.width - _rotateZone && transform.rotation.eulerAngles.y < 120)
-            MovementCamera(_sensitivy);
+        if (other.gameObject.GetComponent<Level>())
+            SceneManager.LoadScene(0);  
     }
-    
-    private void MovementCamera(float _sensitivy)
+
+    private void BendUp()
     {
-        transform.Rotate(0, _sensitivy * Time.deltaTime, 0);
+        _playerHead.SetActive(true);
+    }
+
+    public void BendDown()
+    {
+        _playerHead.SetActive(false);
+        Invoke(nameof(BendUp), _delay);
+    }
+
+    public void Jump()
+    {
+        if (_isGrounded)
+        {
+            _isGrounded = false;
+            _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+        }
     }
 }
