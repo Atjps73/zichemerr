@@ -6,7 +6,7 @@ public class OpenCamera : MonoBehaviour
     [SerializeField] private GameObject[] _cameras;
     [SerializeField] private GameObject _mainCamera;
 
-    private int _currentCameraIndex = 0;
+    private readonly int _currentCameraIndex = 0;
 
     public void TabChangeVisible()
     {
