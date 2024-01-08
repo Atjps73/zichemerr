@@ -7,9 +7,10 @@ public class Door : MonoBehaviour
     [SerializeField] private Vector3 _NextPosition;
     [SerializeField] private GameObject[] obj = new GameObject[3];
 
+    private readonly int _speed = 12;
+    
     private bool _isOpen = true;
     private bool _action = false;
-    private readonly int _speed = 12;
 
     internal void ButtonPressed()
     {
